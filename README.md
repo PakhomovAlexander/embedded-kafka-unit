@@ -14,10 +14,10 @@ It allows you to start and stop a single node Kafka broker instance for testing 
 </table>
 
 ## Gradle
-<pre><code>
+```groovy
 repositories {
 	mavenCentral()
-    maven { url 'https://jitpack.io' }
+	maven { url 'https://jitpack.io' }
 	maven { url "http://repo.hortonworks.com/content/repositories/releases/" }
 }
 
@@ -25,32 +25,32 @@ dependencies {
 	testCompile 'com.github.PakhomovAlexander:embedded-kafka-unit:develop~main-SNAPSHOT'
 	testCompile 'org.apache.kafka:kafka-clients:0.10.1.2.6.3.0-235'
 	testCompile 'org.apache.kafka:kafka_2.11:0.10.1.2.6.3.0-235:test'
-    testCompile 'org.apache.kafka:kafka-clients:0.10.1.2.6.3.0-235:test'
-}    
-</code></pre>
+	testCompile 'org.apache.kafka:kafka-clients:0.10.1.2.6.3.0-235:test'
+} 
+```
 
 
 ## Start using kafka broker
 To start a Kafka broker on random port with Zookeeper under the hood use:
-<pre><code>
+```java
 TestKafka kafka = new TestKafka();
-</code></pre>
+```
 
 You can choose a port for a Kafka broker:
-<pre><code>
+```java
 TestKafka kafka = new TestKafka(6667);
-</code></pre>
+```
 
 Or use JUnitRule:
-<pre><code>
+```java
 @Rule
 public TestKafkaRule kafkaRule = new TestKafkaRule();
 ...
 TestKafka kafka = kafkaRule.getKafka();
-</code></pre>
+```
 
 Then using KafkaUtils module you can consume and produce to the broker:
-<pre><code>
+```java
 public class EmbeddedKafkaTest {
     private static final String TOPIC_NAME = "test-kafka";
     private static final long POLL_TIMEOUT = 100;
@@ -83,7 +83,8 @@ public class EmbeddedKafkaTest {
 
         assertEquals(jsons, consumedMessages);
     }
-</code></pre>
+}
+```
 
 If you don't want to use <code>KafkaUtils</code> you can call <code>testKafka.getConfiguration</code> and use it by yourself.
 
