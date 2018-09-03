@@ -1,1 +1,1 @@
-# embedded-kafka-unit
+# Simple single-node embedded Kafka cluster for integration testing and several convenient utilities

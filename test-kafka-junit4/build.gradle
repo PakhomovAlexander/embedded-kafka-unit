@@ -1,0 +1,38 @@
+group 'com.github.embedded-kafka-unit'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+def kafka = 'org.apache.kafka:kafka_2.11:0.10.1.2.6.3.0-235'
+def kafkaClients = 'org.apache.kafka:kafka-clients:0.10.1.2.6.3.0-235'
+def curatorTest = 'org.apache.curator:curator-test:2.12.0'
+def slf4jApi = 'org.slf4j:slf4j-api:1.7.25'
+def commonsIo = 'commons-io:commons-io:2.5'
+
+def logbackClassic = 'ch.qos.logback:logback-classic:1.2.3'
+def junit = "junit:junit:4.12"
+
+dependencies {
+    compile kafka
+    compile "$kafka:test"
+    compile curatorTest
+    compile slf4jApi
+    compile commonsIo
+    compile "$kafkaClients:test"
+
+    compile junit
+    compile project(':test-kafka')
+    compile project(':test-kafka').sourceSets.test.output
+    testCompile logbackClassic
+
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.2.0'
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.2.0'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.2.0'
+}
+
+test {
+    useJUnitPlatform()
+}

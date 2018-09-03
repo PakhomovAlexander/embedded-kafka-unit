@@ -1,0 +1,7 @@
+rootProject.name = 'embedded-kafka-unit'
+
+include 'test-kafka'
+include 'test-kafka-junit4'
+include 'test-kafka-utils'
+include 'test-kafka-junit5'
+

@@ -1,0 +1,23 @@
+group 'com.github.embedded-kafka-unit'
+
+configurations.all {
+    exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
+
+def kafka = 'org.apache.kafka:kafka_2.11:0.10.1.2.6.3.0-235'
+def kafkaClients = 'org.apache.kafka:kafka-clients:0.10.1.2.6.3.0-235'
+def curatorTest = 'org.apache.curator:curator-test:2.12.0'
+def slf4jApi = 'org.slf4j:slf4j-api:1.7.25'
+def commonsIo = 'commons-io:commons-io:2.5'
+def logbackClassic = 'ch.qos.logback:logback-classic:1.2.3'
+
+dependencies {
+    compile kafka
+    compile "$kafka:test"
+    compile "$kafkaClients:test"
+    compile curatorTest
+    compile slf4jApi
+    compile commonsIo
+
+    testCompile logbackClassic
+}
