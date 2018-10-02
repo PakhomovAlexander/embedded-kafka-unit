@@ -89,6 +89,7 @@ public class EmbeddedKafkaTest {
 
 If you don't want to use <code>KafkaUtils</code> you can call <code>testKafka.getConfiguration</code> and use it by yourself.
 
+For more usage examples see [Demo application](https://github.com/PakhomovAlexander/embedded-kafka-demo)
 ## License
 <pre><code>
 Copyright 2013 Christopher Batey
