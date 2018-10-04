@@ -12,6 +12,10 @@ It allows you to start and stop a single node Kafka broker instance for testing 
         <td align="left">0.0.1</td>
         <td align="left">kafka_2.11:0.10.1.2.6.3.0-235</td>
     </tr>
+        <tr>
+            <td align="left">0.0.2</td>
+            <td align="left">kafka_2.11:0.10.1.2.6.3.0-235</td>
+        </tr>
 </table>
 
 ## Gradle
@@ -23,7 +27,7 @@ repositories {
 }
 
 dependencies {
-	testCompile 'com.github.PakhomovAlexander:embedded-kafka-unit:develop~main-SNAPSHOT'
+	testCompile 'com.github.PakhomovAlexander:embedded-kafka-unit:0.0.2'
 	testCompile 'org.apache.kafka:kafka-clients:0.10.1.2.6.3.0-235'
 	testCompile 'org.apache.kafka:kafka_2.11:0.10.1.2.6.3.0-235:test'
 	testCompile 'org.apache.kafka:kafka-clients:0.10.1.2.6.3.0-235:test'
