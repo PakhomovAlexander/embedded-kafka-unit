@@ -1,4 +1,4 @@
-![](https://jitpack.io/v/PakhomovAlexander/embedded-kafka-unit.svg)
+![](https://jitpack.io/v/PakhomovAlexander/embedded-kafka-unit.svg) ![](https://travis-ci.com/PakhomovAlexander/embedded-kafka-unit.svg?branch=master)
 # Embedded kafka unit
 It allows you to start and stop a single node Kafka broker instance for testing applications that use Kafka
 
